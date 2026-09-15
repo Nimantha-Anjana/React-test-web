@@ -243,6 +243,12 @@ const Home = () => {
             </div>
 
             <div className="facility-card">
+              <div className="facility-icon">☕</div>
+              <h3>Café & Lounge</h3>
+              <p>Relaxed atmosphere with fresh coffee, healthy snacks, and free Wi-Fi.</p>
+            </div>
+
+            <div className="facility-card">
               <div className="facility-icon">📶</div>
               <h3>Free High-Speed WiFi</h3>
               <p>Seamless connectivity available throughout the entire property.</p>
