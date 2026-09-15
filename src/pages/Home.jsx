@@ -142,7 +142,7 @@ const Home = () => {
                 />
               </div>
               <div className="room-card-body">
-                <h3 className="room-title">Deluxe Ocean View</h3>
+                <h3 className="room-title">Deluxe Room</h3>
                 <p className="room-desc">Spacious luxury room offering panoramic views of the ocean with modern amenities.</p>
                 <div className="room-info">
                   <span>👤 2 Guests</span>
