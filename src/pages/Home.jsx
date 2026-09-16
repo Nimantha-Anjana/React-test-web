@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
 import '../css/Home.css';
 
 const Home = () => {
