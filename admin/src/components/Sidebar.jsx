@@ -16,6 +16,8 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     { path: '/admin/customers', label: 'Customers', icon: 'bi-people-fill' },
     { path: '/admin/dining', label: 'Dining', icon: 'bi-cup-hot-fill' },
     { path: '/admin/facilities', label: 'Facilities', icon: 'bi-stars' },
+    { path: '/admin/gallery', label: 'Gallery', icon: 'bi-images' },
+    { path: '/admin/services', label: 'Services', icon: 'bi-gear-wide-connected' },
     { path: '/admin/messages', label: 'Messages', icon: 'bi-chat-left-text-fill', badge: '3' },
     { path: '/admin/settings', label: 'Settings', icon: 'bi-gear-fill' },
   ];

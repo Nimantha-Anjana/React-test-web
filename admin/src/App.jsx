@@ -14,19 +14,23 @@ import Rooms from './pages/Rooms';
 import Bookings from './pages/Bookings';
 import Customers from './pages/Customers';
 import Dining from './pages/Dining';
+import Gallery from './pages/Gallery';
 
 
 /* ==========================================================================
-   STATIC PLACEHOLDER COMPONENTS FOR UPCOMING PAGES
+   STATIC PLACEHOLDER COMPONENT FOR UPCOMING SERVICES PAGE
    ========================================================================== */
-
-
-
-
 const Facilities = () => (
   <div className="luxury-card p-4">
     <h3 className="brand-font text-navy">Hotel Facilities</h3>
     <p className="text-muted mb-0">Facilities and spa reservation module coming in next step...</p>
+  </div>
+);
+
+const Services = () => (
+  <div className="luxury-card p-4">
+    <h3 className="brand-font text-navy">Hotel Services</h3>
+    <p className="text-muted mb-0">Hotel services management module coming in next step...</p>
   </div>
 );
 
@@ -92,6 +96,8 @@ function App() {
           <Route path="customers" element={<Customers />} />
           <Route path="dining" element={<Dining />} />
           <Route path="facilities" element={<Facilities />} />
+          <Route path="gallery" element={<Gallery />} />
+          <Route path="services" element={<Services />} />
           <Route path="messages" element={<Messages />} />
           <Route path="settings" element={<Settings />} />
         </Route>
