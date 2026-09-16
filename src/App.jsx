@@ -23,8 +23,6 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
 
-      {/* Footer එක පහලින් */}
-      <Footer />
     </BrowserRouter>
   );
 }
