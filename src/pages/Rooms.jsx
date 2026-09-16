@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../css/Rooms.css';
 
@@ -88,7 +87,7 @@ const Rooms = () => {
 
   return (
     <div className="rooms-page-wrapper">
-      <Navbar />
+      {/* <Navbar /> අයින් කරන ලදී. මන්ද Layout/App එකෙන් Global Navbar එක Render වෙන බැවිනි. */}
 
       {/* 1. Page Hero */}
       <section className="rooms-hero-section">
