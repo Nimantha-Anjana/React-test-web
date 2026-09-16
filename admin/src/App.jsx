@@ -15,6 +15,7 @@ import Bookings from './pages/Bookings';
 import Customers from './pages/Customers';
 import Dining from './pages/Dining';
 import Gallery from './pages/Gallery';
+import Services from './pages/Services';
 
 
 /* ==========================================================================
@@ -27,12 +28,7 @@ const Facilities = () => (
   </div>
 );
 
-const Services = () => (
-  <div className="luxury-card p-4">
-    <h3 className="brand-font text-navy">Hotel Services</h3>
-    <p className="text-muted mb-0">Hotel services management module coming in next step...</p>
-  </div>
-);
+
 
 const Messages = () => (
   <div className="luxury-card p-4">
