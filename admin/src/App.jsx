@@ -8,33 +8,20 @@ import './App.css';
 import Sidebar from './components/Sidebar';
 import Topbar from './components/Topbar';
 
-// Page Components
+// Page Components (Real Imported Pages)
 import Dashboard from './pages/Dashboard';
 import Rooms from './pages/Rooms';
+import Bookings from './pages/Bookings';
+import Customers from './pages/Customers';
+import Dining from './pages/Dining';
+
 
 /* ==========================================================================
    STATIC PLACEHOLDER COMPONENTS FOR UPCOMING PAGES
    ========================================================================== */
-const Bookings = () => (
-  <div className="luxury-card p-4">
-    <h3 className="brand-font text-navy">Bookings & Reservations</h3>
-    <p className="text-muted mb-0">Bookings management module coming in next step...</p>
-  </div>
-);
 
-const Customers = () => (
-  <div className="luxury-card p-4">
-    <h3 className="brand-font text-navy">Guest Directory</h3>
-    <p className="text-muted mb-0">Customer management module coming in next step...</p>
-  </div>
-);
 
-const Dining = () => (
-  <div className="luxury-card p-4">
-    <h3 className="brand-font text-navy">Dining & Services</h3>
-    <p className="text-muted mb-0">Dining orders and menu management module coming in next step...</p>
-  </div>
-);
+
 
 const Facilities = () => (
   <div className="luxury-card p-4">
