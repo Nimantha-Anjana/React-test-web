@@ -1,21 +1,19 @@
-import mongoose from 'mongoose';
+import { DataTypes } from 'sequelize';
+import { sequelize } from '../config/db.js';
 
-const serviceSchema = new mongoose.Schema(
-  {
-    name: { type: String, required: true, trim: true },
-    shortDesc: { type: String, trim: true },
-    fullDesc: { type: String, trim: true },
-    category: { type: String, required: true, trim: true }, // Wellness, Transportation, Dining ...
-    price: { type: String, trim: true }, // text on purpose: "From $35", "Contact us"
-    availability: { type: String, trim: true },
-    openingTime: { type: String, default: '00:00' }, // "HH:MM"
-    closingTime: { type: String, default: '23:59' },
-    icon: { type: String, trim: true }, // bootstrap-icons class used by the admin panel
-    image: { type: String, trim: true },
-    status: { type: String, enum: ['Active', 'Inactive'], default: 'Active' },
-    isFeatured: { type: Boolean, default: false },
-  },
-  { timestamps: true }
-);
+const Service = sequelize.define('Service', {
+  name: { type: DataTypes.STRING(150), allowNull: false },
+  shortDesc: { type: DataTypes.STRING(300) },
+  fullDesc: { type: DataTypes.TEXT },
+  category: { type: DataTypes.STRING(100), allowNull: false }, // Wellness, Transportation, Dining ...
+  price: { type: DataTypes.STRING(100) }, // text on purpose: "From $35", "Contact us"
+  availability: { type: DataTypes.STRING(100) },
+  openingTime: { type: DataTypes.STRING(5), defaultValue: '00:00' }, // "HH:MM"
+  closingTime: { type: DataTypes.STRING(5), defaultValue: '23:59' },
+  icon: { type: DataTypes.STRING(100) }, // bootstrap-icons class used by the admin panel
+  image: { type: DataTypes.STRING(1000) },
+  status: { type: DataTypes.ENUM('Active', 'Inactive'), defaultValue: 'Active' },
+  isFeatured: { type: DataTypes.BOOLEAN, defaultValue: false },
+});
 
-export default mongoose.model('Service', serviceSchema);
+export default Service;

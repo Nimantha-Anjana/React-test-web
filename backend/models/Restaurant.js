@@ -1,15 +1,13 @@
-import mongoose from 'mongoose';
+import { DataTypes } from 'sequelize';
+import { sequelize } from '../config/db.js';
 
-const restaurantSchema = new mongoose.Schema(
-  {
-    name: { type: String, required: true, trim: true },
-    cuisine: { type: String, trim: true },
-    hours: { type: String, trim: true }, // "07:00 AM - 11:00 PM"
-    location: { type: String, trim: true },
-    status: { type: String, enum: ['Open', 'Closed'], default: 'Open' },
-    image: { type: String, trim: true },
-  },
-  { timestamps: true }
-);
+const Restaurant = sequelize.define('Restaurant', {
+  name: { type: DataTypes.STRING(150), allowNull: false },
+  cuisine: { type: DataTypes.STRING(200) },
+  hours: { type: DataTypes.STRING(100) }, // "07:00 AM - 11:00 PM"
+  location: { type: DataTypes.STRING(200) },
+  status: { type: DataTypes.ENUM('Open', 'Closed'), defaultValue: 'Open' },
+  image: { type: DataTypes.STRING(500) },
+});
 
-export default mongoose.model('Restaurant', restaurantSchema);
+export default Restaurant;

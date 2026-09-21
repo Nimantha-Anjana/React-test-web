@@ -1,16 +1,14 @@
-import mongoose from 'mongoose';
+import { DataTypes } from 'sequelize';
+import { sequelize } from '../config/db.js';
 
 // Messages sent from the website Contact form (shown on the admin "Messages" page)
-const messageSchema = new mongoose.Schema(
-  {
-    name: { type: String, required: true, trim: true },
-    email: { type: String, required: true, trim: true, lowercase: true },
-    phone: { type: String, trim: true },
-    subject: { type: String, trim: true },
-    message: { type: String, required: true, trim: true },
-    isRead: { type: Boolean, default: false },
-  },
-  { timestamps: true }
-);
+const Message = sequelize.define('Message', {
+  name: { type: DataTypes.STRING(150), allowNull: false },
+  email: { type: DataTypes.STRING(150), allowNull: false, validate: { isEmail: true } },
+  phone: { type: DataTypes.STRING(50) },
+  subject: { type: DataTypes.STRING(200) },
+  message: { type: DataTypes.TEXT, allowNull: false },
+  isRead: { type: DataTypes.BOOLEAN, defaultValue: false },
+});
 
-export default mongoose.model('Message', messageSchema);
+export default Message;

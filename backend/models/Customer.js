@@ -1,18 +1,16 @@
-import mongoose from 'mongoose';
+import { DataTypes } from 'sequelize';
+import { sequelize } from '../config/db.js';
 
-const customerSchema = new mongoose.Schema(
-  {
-    name: { type: String, required: true, trim: true },
-    email: { type: String, required: true, trim: true, lowercase: true, unique: true },
-    phone: { type: String, trim: true },
-    address: { type: String, trim: true },
-    regDate: { type: Date, default: Date.now },
-    totalBookings: { type: Number, default: 0, min: 0 },
-    lastVisit: { type: Date },
-    status: { type: String, enum: ['New', 'Returning', 'Active'], default: 'New' },
-    avatar: { type: String, trim: true },
-  },
-  { timestamps: true }
-);
+const Customer = sequelize.define('Customer', {
+  name: { type: DataTypes.STRING(150), allowNull: false },
+  email: { type: DataTypes.STRING(150), allowNull: false, unique: true, validate: { isEmail: true } },
+  phone: { type: DataTypes.STRING(50) },
+  address: { type: DataTypes.STRING(300) },
+  regDate: { type: DataTypes.DATEONLY, defaultValue: DataTypes.NOW },
+  totalBookings: { type: DataTypes.INTEGER, defaultValue: 0, validate: { min: 0 } },
+  lastVisit: { type: DataTypes.DATEONLY },
+  status: { type: DataTypes.ENUM('New', 'Returning', 'Active'), defaultValue: 'New' },
+  avatar: { type: DataTypes.STRING(500) },
+});
 
-export default mongoose.model('Customer', customerSchema);
+export default Customer;
